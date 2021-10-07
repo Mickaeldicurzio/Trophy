@@ -16,7 +16,7 @@ class CityCardWidget extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => CityPage(
-                      cityName: city.cityName,
+                      city: city,
                     )),
           );
         },
