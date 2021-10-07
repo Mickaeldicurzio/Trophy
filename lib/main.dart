@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trophy/Pages/_citypage.dart';
 import 'package:trophy/Pages/_homepage.dart';
 
 void main() => runApp(const MyApp());
@@ -17,7 +16,6 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const HomePage(),
-          '/city': (context) => const CityPage(),
         });
   }
 }
