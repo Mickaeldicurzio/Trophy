@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
-
 class City {
   int id;
   String cityName;
   String imagePath;
-  Text? description;
+  String? description;
 
   City(
       {required this.id,

@@ -16,7 +16,7 @@ class _ListToogleButtonState extends State<ListToogleButton> {
       child: IconButton(
         onPressed: () {},
         icon: const Icon(
-          CupertinoIcons.list_dash,
+          CupertinoIcons.map_pin_ellipse,
           color: Colors.white,
         ),
       ),
