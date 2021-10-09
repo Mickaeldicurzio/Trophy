@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trophy/Classes/city.dart';
+import 'package:trophy/models/city.dart';
 
 class CityPage extends StatelessWidget {
   final City city;

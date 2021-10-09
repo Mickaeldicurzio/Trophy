@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import "package:latlong2/latlong.dart" as latLng;
-import 'package:trophy/Component/_maptargetbutton.dart';
-import 'package:trophy/Component/_searchbarwidget.dart';
+import 'package:trophy/components/_maptargetbutton.dart';
+import 'package:trophy/components/_searchbarwidget.dart';
 
 class MapWidget extends StatefulWidget {
   const MapWidget({Key? key}) : super(key: key);

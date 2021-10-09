@@ -11,7 +11,7 @@ class HeroWidget extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              'hero.jpg',
+              'images/hero.jpg',
             ),
             fit: BoxFit.cover,
           ),

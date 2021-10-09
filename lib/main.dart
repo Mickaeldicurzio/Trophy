@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trophy/Classes/colors.dart';
-import 'package:trophy/Pages/Account/_loginpage.dart';
-import 'package:trophy/Pages/_homepage.dart';
+import 'package:trophy/utilities/colors.dart';
+import 'package:trophy/screens/account/_loginpage.dart';
+import 'package:trophy/screens/_homepage.dart';
 
 void main() => runApp(const MyApp());
 

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trophy/Classes/city.dart';
-import 'package:trophy/Pages/_citypage.dart';
+import 'package:trophy/models/city.dart';
+import 'package:trophy/screens/_citypage.dart';
 
 class CityCardWidget extends StatelessWidget {
   CityCardWidget({Key? key}) : super(key: key);
 
   final city =
-      City(id: 1, cityName: "Montpellier", imagePath: 'montpellier.jpg');
+      City(id: 1, cityName: "Montpellier", imagePath: 'images/montpellier.jpg');
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trophy/Widgets/_citycardwidget.dart';
+import 'package:trophy/widgets/_citycardwidget.dart';
 
 class CityListWidget extends StatelessWidget {
   const CityListWidget({Key? key}) : super(key: key);
