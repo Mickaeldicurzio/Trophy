@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trophy/components/_herowidget.dart';
+import 'package:trophy/components/_loginherowidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: const [HeroWidget()],
+        children: const [LoginHeroWidget()],
       ),
     );
   }

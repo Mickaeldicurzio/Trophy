@@ -18,7 +18,24 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
             title: _title,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(scaffoldBackgroundColor: AppColors.primary),
+            theme: ThemeData(
+              // Define the default brightness and colors.
+              brightness: Brightness.dark,
+              primaryColor: AppColors.white,
+              scaffoldBackgroundColor: AppColors.primary,
+              fontFamily: 'Lato-Italic',
+              textTheme: const TextTheme(
+                headline1: TextStyle(
+                    fontSize: 72.0,
+                    fontFamily: 'Lato-Bold',
+                    fontWeight: FontWeight.bold),
+                headline6: TextStyle(
+                    fontSize: 36.0,
+                    fontFamily: 'Lato-BoldItalic',
+                    fontStyle: FontStyle.italic),
+                bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Lato'),
+              ),
+            ),
             initialRoute: _isLoggedIn ? '/' : '/login',
             routes: {
               '/login': (context) => const Scaffold(body: LoginPage()),
