@@ -9,7 +9,7 @@ class CityListWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       child: (Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           CityCardWidget(),
           CityCardWidget(),
