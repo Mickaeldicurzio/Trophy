@@ -23,6 +23,13 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
               primaryColor: AppColors.white,
               scaffoldBackgroundColor: AppColors.primary,
+              inputDecorationTheme: InputDecorationTheme(
+                  focusColor: AppColors.white,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.white, width: 2)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.white, width: 2)),
+                  labelStyle: TextStyle(color: AppColors.white)),
               fontFamily: 'Lato-Italic',
               textTheme: const TextTheme(
                 headline1: TextStyle(
@@ -33,7 +40,7 @@ class MyApp extends StatelessWidget {
                     fontSize: 36.0,
                     fontFamily: 'Lato-BoldItalic',
                     fontStyle: FontStyle.italic),
-                bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Lato'),
+                bodyText2: TextStyle(fontSize: 22.0, fontFamily: 'Lato'),
               ),
             ),
             initialRoute: _isLoggedIn ? '/' : '/login',
