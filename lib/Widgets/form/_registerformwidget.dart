@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trophy/components/form/_doublepasswordinputwidget.dart';
 import 'package:trophy/components/form/_emailinputwidget.dart';
-import 'package:trophy/components/form/_passwordinputwidget.dart';
 import 'package:trophy/components/form/_submitinputwidget.dart';
 
 class RegisterFormWidget extends StatefulWidget {
@@ -15,18 +15,17 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                const EmailInputWidget(),
-                const PasswordInputWidget(),
-                SubmitInputWidget(formKey: _formKey),
-              ],
-            ))
-      ],
+    return Container(
+      alignment: Alignment.center,
+      child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              const EmailInputWidget(),
+              const DoublePasswordInputWidget(),
+              SubmitInputWidget(formKey: _formKey),
+            ],
+          )),
     );
   }
 }

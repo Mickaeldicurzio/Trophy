@@ -1,7 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:trophy/components/form/_validatelogowidget.dart';
-import 'package:trophy/utilities/colors.dart';
 
 class EmailInputWidget extends StatefulWidget {
   const EmailInputWidget({Key? key}) : super(key: key);

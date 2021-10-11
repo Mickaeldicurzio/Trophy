@@ -10,18 +10,41 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(color: AppColors.primary),
-      child: Column(
-        children: <Widget>[
-          const Text(
-            'Créer votre Compte',
-            style: TextStyle(fontSize: 18.0),
+        body: Stack(
+      children: [
+        Container(
+            margin: const EdgeInsets.only(top: 40),
+            decoration: BoxDecoration(color: AppColors.primary),
+            child: Form(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    child: const Text(
+                      'Créer votre Compte',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                  const RegisterFormWidget(),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 10, top: 10),
+                    child: Mixins.devider,
+                  )
+                ],
+              ),
+            )),
+        Positioned(
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              CupertinoIcons.arrow_left,
+              color: Colors.white,
+            ),
           ),
-          Mixins.devider,
-          const RegisterFormWidget(),
-        ],
-      ),
+        )
+      ],
     ));
   }
 }
