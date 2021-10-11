@@ -1,13 +1,13 @@
 import "package:flutter/material.dart";
 
 class SubmitInputWidget extends StatelessWidget {
-  final formKey;
-  SubmitInputWidget({Key? key, required this.formKey}) : super(key: key);
+  final dynamic formKey;
+  const SubmitInputWidget({Key? key, required this.formKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(top: 10, bottom: 10),
+        margin: const EdgeInsets.only(top: 10, bottom: 10),
         child: ElevatedButton(
           onPressed: () {
             // Validate returns true if the form is valid, or false otherwise.
@@ -19,7 +19,7 @@ class SubmitInputWidget extends StatelessWidget {
               );
             }
           },
-          child: const Text('Enregister'),
+          child: const Text('Validez'),
         ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trophy/screens/account/_registerpage.dart';
 import 'package:trophy/utilities/colors.dart';
 import 'package:trophy/screens/account/_loginpage.dart';
 import 'package:trophy/screens/_homepage.dart';
@@ -28,9 +29,10 @@ class MyApp extends StatelessWidget {
               fontFamily: 'Lato',
               textTheme: Mixins.textTheme,
             ),
-            initialRoute: _isLoggedIn ? '/' : '/login',
+            initialRoute: _isLoggedIn ? '/' : '/register',
             routes: {
               '/login': (context) => const Scaffold(body: LoginPage()),
+              '/register': (context) => const Scaffold(body: RegisterPage()),
               '/': (context) => const Scaffold(body: HomePage()),
             }));
   }

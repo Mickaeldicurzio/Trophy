@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trophy/utilities/colors.dart';
 
 class PasswordInputWidget extends StatefulWidget {
   const PasswordInputWidget({Key? key}) : super(key: key);
