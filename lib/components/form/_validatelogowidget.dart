@@ -4,10 +4,7 @@ import 'package:trophy/utilities/colors.dart';
 
 class ValidateLogoWidget extends StatelessWidget {
   final bool isValid;
-  final bool hasChange;
-  const ValidateLogoWidget(
-      {Key? key, required this.isValid, required this.hasChange})
-      : super(key: key);
+  const ValidateLogoWidget({Key? key, required this.isValid}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +29,7 @@ class ValidateLogoWidget extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        visible: !isValid && hasChange ? true : false,
+        visible: !isValid ? true : false,
       ),
     ]);
   }

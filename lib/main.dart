@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trophy/utilities/colors.dart';
 import 'package:trophy/screens/account/_loginpage.dart';
 import 'package:trophy/screens/_homepage.dart';
+import 'package:trophy/utilities/mixins.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,25 +24,9 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
               primaryColor: AppColors.white,
               scaffoldBackgroundColor: AppColors.primary,
-              inputDecorationTheme: InputDecorationTheme(
-                  focusColor: AppColors.white,
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.white, width: 2)),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.white, width: 2)),
-                  labelStyle: TextStyle(color: AppColors.white)),
-              fontFamily: 'Lato-Italic',
-              textTheme: const TextTheme(
-                headline1: TextStyle(
-                    fontSize: 72.0,
-                    fontFamily: 'Lato-Bold',
-                    fontWeight: FontWeight.bold),
-                headline6: TextStyle(
-                    fontSize: 36.0,
-                    fontFamily: 'Lato-BoldItalic',
-                    fontStyle: FontStyle.italic),
-                bodyText2: TextStyle(fontSize: 22.0, fontFamily: 'Lato'),
-              ),
+              inputDecorationTheme: Mixins.inputField,
+              fontFamily: 'Lato',
+              textTheme: Mixins.textTheme,
             ),
             initialRoute: _isLoggedIn ? '/' : '/login',
             routes: {
