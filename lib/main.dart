@@ -1,43 +1,57 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:trophy/screens/account/_registerpage.dart';
-import 'package:trophy/utilities/colors.dart';
-import 'package:trophy/screens/account/_loginpage.dart';
-import 'package:trophy/screens/_homepage.dart';
-import 'package:trophy/utilities/mixins.dart';
 
-void main() async {
+// Import the firebase_core plugin
+import 'package:firebase_core/firebase_core.dart';
+import 'package:trophy/trophy.dart';
+
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
-  runApp(const Trophy());
+  runApp(App());
 }
 
-class Trophy extends StatelessWidget {
-  const Trophy({Key? key}) : super(key: key);
+class App extends StatefulWidget {
+  _AppState createState() => _AppState();
+}
 
-  static const String _title = 'Trophee';
-  static const bool _isLoggedIn = false;
+class _AppState extends State<App> {
+  // Set default `_initialized` and `_error` state to false
+  bool _initialized = false;
+  bool _error = false;
+
+  // Define an async function to initialize FlutterFire
+  void initializeFlutterFire() async {
+    try {
+      // Wait for Firebase to initialize and set `_initialized` state to true
+      await Firebase.initializeApp();
+      setState(() {
+        _initialized = true;
+      });
+    } catch (e) {
+      // Set `_error` state to true if Firebase initialization fails
+      setState(() {
+        _error = true;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    initializeFlutterFire();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: MaterialApp(
-            title: _title,
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              // Define the default brightness and colors.
-              brightness: Brightness.dark,
-              primaryColor: AppColors.white,
-              scaffoldBackgroundColor: AppColors.primary,
-              inputDecorationTheme: Mixins.inputField,
-              fontFamily: 'Lato',
-              textTheme: Mixins.textTheme,
-            ),
-            initialRoute: _isLoggedIn ? '/' : '/login',
-            routes: {
-          '/login': (context) => const Scaffold(body: LoginPage()),
-          '/register': (context) => const Scaffold(body: RegisterPage()),
-          '/': (context) => const Scaffold(body: HomePage()),
-        }));
+    // Show error message if initialization failed
+    if (_error) {
+      print('error');
+    }
+
+    // Show a loader until FlutterFire is initialized
+    if (!_initialized) {
+      print('onload');
+    }
+
+    return const Trophy();
   }
 }

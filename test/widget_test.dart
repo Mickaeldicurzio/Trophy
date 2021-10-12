@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:trophy/main.dart';
+import 'package:trophy/trophy.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
