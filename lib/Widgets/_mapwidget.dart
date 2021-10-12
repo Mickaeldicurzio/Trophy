@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import "package:latlong2/latlong.dart" as lat_lng;
+import 'package:latlong/latlong.dart' as lat_lng;
 import 'package:trophy/components/_maptargetbutton.dart';
 import 'package:trophy/components/_searchbarwidget.dart';
 
@@ -28,9 +28,9 @@ class _MapWidgetState extends State<MapWidget> {
               urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
               subdomains: ['a', 'b', 'c'],
               backgroundColor: Colors.black,
-              attributionBuilder: (_) {
-                return const Text("© OpenStreetMap contributors");
-              },
+              // attributionBuilder: (_) {
+              //return const Text("© OpenStreetMap contributors");
+              //},
             ),
             MarkerLayerOptions(
               markers: [

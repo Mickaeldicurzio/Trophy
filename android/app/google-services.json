@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1052247728801",
+    "project_id": "trophy-3e3bf",
+    "storage_bucket": "trophy-3e3bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052247728801:android:2dc7fb9afc5ed6389806e0",
+        "android_client_info": {
+          "package_name": "com.mdicurzio.trophy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052247728801-f6cq5g25o2dj7n7f17rme38fpe3il1h9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjhGpXY_ViWx0l8akERWK7Cgvm_WNXAUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052247728801-f6cq5g25o2dj7n7f17rme38fpe3il1h9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

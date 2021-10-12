@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:trophy/screens/account/_registerpage.dart';
 import 'package:trophy/utilities/colors.dart';
@@ -5,10 +6,14 @@ import 'package:trophy/screens/account/_loginpage.dart';
 import 'package:trophy/screens/_homepage.dart';
 import 'package:trophy/utilities/mixins.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  runApp(const Trophy());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Trophy extends StatelessWidget {
+  const Trophy({Key? key}) : super(key: key);
 
   static const String _title = 'Trophee';
   static const bool _isLoggedIn = false;
@@ -16,7 +21,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: const BoxDecoration(color: Colors.red),
         child: MaterialApp(
             title: _title,
             debugShowCheckedModeBanner: false,
@@ -31,9 +35,9 @@ class MyApp extends StatelessWidget {
             ),
             initialRoute: _isLoggedIn ? '/' : '/login',
             routes: {
-              '/login': (context) => const Scaffold(body: LoginPage()),
-              '/register': (context) => const Scaffold(body: RegisterPage()),
-              '/': (context) => const Scaffold(body: HomePage()),
-            }));
+          '/login': (context) => const Scaffold(body: LoginPage()),
+          '/register': (context) => const Scaffold(body: RegisterPage()),
+          '/': (context) => const Scaffold(body: HomePage()),
+        }));
   }
 }

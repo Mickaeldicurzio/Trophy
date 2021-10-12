@@ -13,7 +13,7 @@ class RegisterPage extends StatelessWidget {
         body: Stack(
       children: [
         Container(
-            margin: const EdgeInsets.only(top: 40),
+            margin: const EdgeInsets.only(top: 100),
             decoration: BoxDecoration(color: AppColors.primary),
             child: Form(
               child: Column(
@@ -34,6 +34,7 @@ class RegisterPage extends StatelessWidget {
               ),
             )),
         Positioned(
+          top: 60,
           child: IconButton(
             onPressed: () {
               Navigator.pop(context);
