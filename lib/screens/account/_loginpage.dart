@@ -11,7 +11,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        body: Container(
       decoration: BoxDecoration(color: AppColors.primary),
       child: Column(
         children: <Widget>[
@@ -73,6 +74,6 @@ class LoginPage extends StatelessWidget {
               ))
         ],
       ),
-    );
+    ));
   }
 }

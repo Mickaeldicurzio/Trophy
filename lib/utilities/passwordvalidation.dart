@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class PasswordValidation {
   bool validateStructure(String value) {
     String pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';

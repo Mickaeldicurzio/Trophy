@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trophy/utilities/passwordvalidation.dart';
 
 class PasswordInputWidget extends StatefulWidget {
   final FormFieldSetter<String> onSaved;

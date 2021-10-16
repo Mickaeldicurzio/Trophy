@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:trophy/screens/account/_registerpage.dart';
 import 'package:trophy/utilities/colors.dart';
@@ -17,24 +16,23 @@ class Trophy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: MaterialApp(
-            title: _title,
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              // Define the default brightness and colors.
-              brightness: Brightness.dark,
-              primaryColor: AppColors.white,
-              scaffoldBackgroundColor: AppColors.primary,
-              inputDecorationTheme: Mixins.inputField,
-              fontFamily: 'Lato',
-              textTheme: Mixins.textTheme,
-            ),
-            initialRoute: '/login',
-            routes: {
-          '/login': (context) => const Scaffold(body: LoginPage()),
-          '/register': (context) => const Scaffold(body: RegisterPage()),
-          '/': (context) => const Scaffold(body: HomePage()),
-        }));
+    return MaterialApp(
+        title: _title,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          // Define the default brightness and colors.
+          brightness: Brightness.dark,
+          primaryColor: AppColors.white,
+          scaffoldBackgroundColor: AppColors.primary,
+          inputDecorationTheme: Mixins.inputField,
+          fontFamily: 'Lato',
+          textTheme: Mixins.textTheme,
+        ),
+        initialRoute: _isLoggedIn ? '/' : '/login',
+        routes: {
+          '/login': (context) => const LoginPage(),
+          '/register': (context) => const RegisterPage(),
+          '/': (context) => const HomePage(),
+        });
   }
 }

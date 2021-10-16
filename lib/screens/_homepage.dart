@@ -7,8 +7,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+        body: Column(
       children: const [LoginHeroWidget()],
-    );
+    ));
   }
 }

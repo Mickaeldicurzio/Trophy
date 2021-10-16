@@ -6,7 +6,7 @@ import 'package:trophy/trophy.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatefulWidget {
