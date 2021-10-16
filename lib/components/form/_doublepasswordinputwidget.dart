@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DoublePasswordInputWidget extends StatefulWidget {
-  const DoublePasswordInputWidget({Key? key}) : super(key: key);
+  final FormFieldSetter<String> onSaved;
+  const DoublePasswordInputWidget({Key? key, required this.onSaved})
+      : super(key: key);
 
   @override
   _DoublePasswordInputWidgetState createState() =>
@@ -40,6 +42,7 @@ class _DoublePasswordInputWidgetState extends State<DoublePasswordInputWidget> {
                   return 'Le champ ne peut être vide';
                 }
               },
+              onSaved: widget.onSaved,
             ))
       ],
     );

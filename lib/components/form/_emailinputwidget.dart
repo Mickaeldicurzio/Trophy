@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:trophy/components/form/_validatelogowidget.dart';
 
 class EmailInputWidget extends StatefulWidget {
-  const EmailInputWidget({Key? key}) : super(key: key);
+  final FormFieldSetter<String> onSaved;
+  const EmailInputWidget({Key? key, required this.onSaved}) : super(key: key);
 
   @override
   _EmailInputWidgetState createState() => _EmailInputWidgetState();
@@ -27,6 +28,7 @@ class _EmailInputWidgetState extends State<EmailInputWidget> {
                 ? 'Veuillez entrez un email au bon format'
                 : null;
           },
+          onSaved: widget.onSaved,
         ),
       ),
       const Visibility(

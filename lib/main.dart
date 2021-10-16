@@ -10,6 +10,9 @@ void main() {
 }
 
 class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
   _AppState createState() => _AppState();
 }
 
@@ -43,13 +46,11 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     // Show error message if initialization failed
-    if (_error) {
-      print('error');
-    }
+    if (_error) {}
 
     // Show a loader until FlutterFire is initialized
     if (!_initialized) {
-      print('onload');
+      const CircularProgressIndicator();
     }
 
     return const Trophy();
