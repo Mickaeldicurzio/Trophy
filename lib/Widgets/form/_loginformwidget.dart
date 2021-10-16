@@ -29,7 +29,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               children: [
                 EmailInputWidget(onSaved: (value) => user.email = value),
                 PasswordInputWidget(onSaved: (value) => user.password = value),
-                SubmitInputWidget(formKey: _formKey, user: user),
+                SubmitInputWidget(
+                  formKey: _formKey,
+                  user: user,
+                  isLogIn: true,
+                ),
               ],
             ))
       ],

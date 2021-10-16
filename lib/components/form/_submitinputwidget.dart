@@ -1,11 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:trophy/models/user.dart' as user_model;
+import 'package:trophy/utilities/authhelper.dart';
 
 class SubmitInputWidget extends StatelessWidget {
   final dynamic formKey;
   final user_model.User user;
-  const SubmitInputWidget({Key? key, required this.formKey, required this.user})
+  final bool isLogIn;
+  const SubmitInputWidget(
+      {Key? key,
+      required this.formKey,
+      required this.user,
+      this.isLogIn = false})
       : super(key: key);
 
   @override
@@ -15,24 +21,22 @@ class SubmitInputWidget extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             if (formKey.currentState.validate()) {
-              try {
-                // Process data.
-                formKey.currentState.save();
-                print(user.email);
-                print(user.password);
-                // await FirebaseAuth.instance
-                //   .createUserWithEmailAndPassword(
-                //     email: "barry.allen@example.com",
-                //   password: "SuperSecretPassword!");
-              } on FirebaseAuthException catch (e) {
-                if (e.code == 'weak-password') {
-                  print('The password provided is too weak.');
-                } else if (e.code == 'email-already-in-use') {
-                  print('The account already exists for that email.');
-                }
-              } catch (e) {
-                print(e);
-              }
+              // Process data.
+              dynamic result;
+              formKey.currentState.save();
+              isLogIn
+                  ? AuthenticationHelper()
+                      .signIn(
+                          email: user.email ?? '',
+                          password: user.password ?? '')
+                      .then((value) =>
+                          AuthenticationHelper().resultAction(value, context))
+                  : AuthenticationHelper()
+                      .signUp(
+                          email: user.email ?? '',
+                          password: user.password ?? '')
+                      .then((value) =>
+                          AuthenticationHelper().resultAction(value, context));
             }
           },
           child: const Text('Validez'),
