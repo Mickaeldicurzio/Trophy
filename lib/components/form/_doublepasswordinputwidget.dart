@@ -13,6 +13,8 @@ class DoublePasswordInputWidget extends StatefulWidget {
 
 class _DoublePasswordInputWidgetState extends State<DoublePasswordInputWidget> {
   String firstPasswordFieldValue = "";
+  bool _isFirstObscure = true;
+  bool _isSecondObscure = true;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,9 +23,18 @@ class _DoublePasswordInputWidgetState extends State<DoublePasswordInputWidget> {
             padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
             width: 300,
             child: TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
+              obscureText: _isFirstObscure,
+              decoration: InputDecoration(
                 labelText: 'Mot de passe',
+                suffixIcon: IconButton(
+                    icon: Icon(_isFirstObscure
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _isFirstObscure = !_isFirstObscure;
+                      });
+                    }),
               ),
               onChanged: (value) => firstPasswordFieldValue = value,
               validator: (String? value) {
@@ -39,9 +50,18 @@ class _DoublePasswordInputWidgetState extends State<DoublePasswordInputWidget> {
             padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
             width: 300,
             child: TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
+              obscureText: _isSecondObscure,
+              decoration: InputDecoration(
                 labelText: 'Confirmer votre mot de passe',
+                suffixIcon: IconButton(
+                    icon: Icon(_isSecondObscure
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _isSecondObscure = !_isSecondObscure;
+                      });
+                    }),
               ),
               validator: (String? value) {
                 if (value != null && value.trim().isEmpty) {

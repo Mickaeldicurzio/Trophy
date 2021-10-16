@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:trophy/models/user.dart' as user_model;
 import 'package:trophy/utilities/authhelper.dart';
@@ -22,7 +21,6 @@ class SubmitInputWidget extends StatelessWidget {
           onPressed: () {
             if (formKey.currentState.validate()) {
               // Process data.
-              dynamic result;
               formKey.currentState.save();
               isLogIn
                   ? AuthenticationHelper()
