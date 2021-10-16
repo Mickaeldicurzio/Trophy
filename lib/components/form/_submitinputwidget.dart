@@ -29,14 +29,14 @@ class SubmitInputWidget extends StatelessWidget {
                       .signIn(
                           email: user.email ?? '',
                           password: user.password ?? '')
-                      .then((value) =>
-                          AuthenticationHelper().resultAction(value, context))
+                      .then((value) => AuthenticationHelper()
+                          .loginRedirectAction(value, context))
                   : AuthenticationHelper()
                       .signUp(
                           email: user.email ?? '',
                           password: user.password ?? '')
-                      .then((value) =>
-                          AuthenticationHelper().resultAction(value, context));
+                      .then((value) => AuthenticationHelper()
+                          .loginRedirectAction(value, context));
             }
           },
           child: const Text('Validez'),

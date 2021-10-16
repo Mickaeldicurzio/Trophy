@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:trophy/screens/_homepage.dart';
 
 class AuthenticationHelper {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -36,19 +37,21 @@ class AuthenticationHelper {
 
   //SIGN OUT METHOD
   Future signOut() async {
-    await _auth.signOut();
-
-    print('signout');
+    await _auth.signOut().then((value) => null);
   }
 
-  resultAction(result, context) {
+  loginRedirectAction(result, context) {
     return result != null
-        ? Scaffold.of(context).showSnackBar(SnackBar(
+        ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(
               result,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ))
-        : null;
+        : Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomePage(),
+            ));
   }
 }

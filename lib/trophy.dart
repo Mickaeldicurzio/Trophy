@@ -30,7 +30,7 @@ class Trophy extends StatelessWidget {
               fontFamily: 'Lato',
               textTheme: Mixins.textTheme,
             ),
-            initialRoute: _isLoggedIn ? '/' : '/login',
+            initialRoute: '/login',
             routes: {
           '/login': (context) => const Scaffold(body: LoginPage()),
           '/register': (context) => const Scaffold(body: RegisterPage()),
